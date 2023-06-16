@@ -24,26 +24,26 @@ const TodosList = () => {
     }
   };
 
-  const removeDoneTodo = () => {
-    todos.forEach(({ done, _id }) => {
-      if (done) {
-        dispatch(deleteTodo(_id));
-      }
-    });
-  };
+  // const removeDoneTodo = () => {
+  //   todos.forEach(({ done, _id }) => {
+  //     if (done) {
+  //       dispatch(deleteTodo(_id));
+  //     }
+  //   });
+  // };
 
   return (
     <div>
       <article>
         <div className="tab">
           <Tab currentTab={currentTab} />
-          <div>
+          {/* <div>
             {todos?.some((todo) => todo?.done) ? (
               <button onClick={removeDoneTodo} className="btn clear">
                 Remove done Todos
               </button>
             ) : null}
-          </div>
+          </div> */}
         </div>
         <ul>
           {getTodos().map((todo) => (
