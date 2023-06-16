@@ -8,7 +8,6 @@ import {
   TOGGLE_TAB,
 } from "./actionType";
 
-const API_URL = "http://localhost:8000";
 
 export const addNewTodo = (data) => async (dispatch) => {
   try {
