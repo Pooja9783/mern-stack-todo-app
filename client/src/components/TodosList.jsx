@@ -38,7 +38,7 @@ const TodosList = () => {
         <div className="tab">
           <Tab currentTab={currentTab} />
           <div>
-            {todos.some((todo) => todo.done) ? (
+            {todos?.some((todo) => todo?.done) ? (
               <button onClick={removeDoneTodo} className="btn clear">
                 Remove done Todos
               </button>
