@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getTodo, deleteTodo } from "../redux/action";
-import { ALL_TODOS, ACTIVE_TODOS, DONE_TODOS } from "./../redux/actionType";
+import { ALL_TODOS, ACTIVE_TODOS } from "./../redux/actionType";
 
 import Todo from "./Todo";
 import Tab from "./Tab";
@@ -12,12 +12,12 @@ const TodosList = () => {
   const currentTab = useSelector((state) => state.currentTab);
   useEffect(() => {
     dispatch(getTodo());
-  }, []);
+  }, [dispatch]);
 
   const getTodos = () => {
-    if (currentTab == ALL_TODOS) {
+    if (currentTab === ALL_TODOS) {
       return todos;
-    } else if (currentTab == ACTIVE_TODOS) {
+    } else if (currentTab === ACTIVE_TODOS) {
       return todos.filter((todo) => !todo.done);
     } else {
       return todos.filter((todo) => todo.done);
