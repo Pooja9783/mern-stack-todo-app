@@ -14,9 +14,11 @@ const TodosList = () => {
     dispatch(getTodo());
   }, [dispatch]);
 
-console.log(todos);
 
   const getTodos = () => {
+    if (!todos) {
+      return [];
+    }
     if (currentTab === ALL_TODOS) {
       return todos;
     } else if (currentTab === ACTIVE_TODOS) {
@@ -34,7 +36,6 @@ console.log(todos);
     });
   };
 
-  console.log(todos?.some((todo) => todo?.done))
   return (
     <div>
       <article>
@@ -49,7 +50,7 @@ console.log(todos);
           </div>
         </div>
         <ul>
-          {todos.map((todo) => (
+          {getTodos().map((todo) => (
             <Todo key={todo._id} todo={todo} />
           ))}
         </ul>
