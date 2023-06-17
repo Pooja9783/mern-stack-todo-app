@@ -50,7 +50,7 @@ const TodosList = () => {
           </div> */}
         </div>
         <ul>
-          {getTodos().map((todo) => (
+          {todos.map((todo) => (
             <Todo key={todo._id} todo={todo} />
           ))}
         </ul>
