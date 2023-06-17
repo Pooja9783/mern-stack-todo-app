@@ -4,7 +4,7 @@ import { getTodo, deleteTodo } from "../redux/action";
 import { ALL_TODOS, ACTIVE_TODOS } from "./../redux/actionType";
 
 import Todo from "./Todo";
-import Tab from "./Tab";
+// import Tab from "./Tab";
 
 const TodosList = () => {
   const dispatch = useDispatch();
@@ -40,7 +40,7 @@ const TodosList = () => {
     <div>
       <article>
         <div className="tab">
-          <Tab currentTab={currentTab} />
+          {/* <Tab currentTab={currentTab} /> */}
           <div>
             {todos?.some((todo) => todo?.done) ? (
               <button onClick={removeDoneTodo} className="btn clear">
