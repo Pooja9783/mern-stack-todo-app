@@ -34,6 +34,7 @@ console.log(todos);
     });
   };
 
+  console.log(todos?.some((todo) => todo?.done))
   return (
     <div>
       <article>
@@ -48,7 +49,7 @@ console.log(todos);
           </div>
         </div>
         <ul>
-          {getTodos().map((todo) => (
+          {todos.map((todo) => (
             <Todo key={todo._id} todo={todo} />
           ))}
         </ul>
