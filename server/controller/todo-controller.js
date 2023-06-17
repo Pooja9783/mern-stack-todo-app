@@ -17,7 +17,7 @@ export const addtodo = async (req, res) => {
 
 export const getAllTodo = async (req, res) => {
   try {
-    const newTodo = await Todo.find({});
+    const newTodo = await Todo.find([]);
     return res.status(200).json(newTodo);
   } catch (err) {
     return res.status(500).json(err.message);
