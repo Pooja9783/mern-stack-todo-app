@@ -12,10 +12,10 @@ export const todoReducer = (state = [], action) => {
       return [action.payload, ...state];
     case GETALL_TODO:
       return action.payload;
-    // case TOGGLE_TODO:
-    //   return state.map((todo) =>
-    //     todo._id === action.payload._id ? { ...todo, done: !todo.done } : todo
-    //   );
+    case TOGGLE_TODO:
+      return state.map((todo) =>
+        todo._id === action.payload._id ? { ...todo, done: !todo.done } : todo
+      );
     case UPADTE_TODO:
       return state.map((todo) =>
         todo._id === action.payload._id

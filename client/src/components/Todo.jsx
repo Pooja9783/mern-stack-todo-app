@@ -13,7 +13,9 @@ const Todo = ({ todo }) => {
   };
 
   return (
-    <li className="task" onClick={() => dispatch(toggleTodo(todo._id))}>
+    <li className="task" 
+    // onClick={() => dispatch(toggleTodo(todo._id))}
+    >
       <span
         style={{
           display: edit ? "none" : "block",

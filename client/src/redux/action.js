@@ -27,14 +27,14 @@ export const getTodo = () => async (dispatch) => {
   }
 };
 
-export const toggleTodo = (id) => async (dispatch) => {
-  try {
-    const res = await axios.get(`/todos/${id}`);
-    dispatch({ type: TOGGLE_TODO, payload: res.data });
-  } catch (error) {
-    console.log("Error while calling getTodo API", error.message);
-  }
-};
+// export const toggleTodo = (id) => async (dispatch) => {
+//   try {
+//     const res = await axios.get(`/todos/${id}`);
+//     dispatch({ type: TOGGLE_TODO, payload: res.data });
+//   } catch (error) {
+//     console.log("Error while calling getTodo API", error.message);
+//   }
+// };
 
 export const updateTodo = (id, data) => async (dispatch) => {
   try {

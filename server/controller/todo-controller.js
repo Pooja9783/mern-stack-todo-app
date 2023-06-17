@@ -17,26 +17,26 @@ export const addtodo = async (req, res) => {
 
 export const getAllTodo = async (req, res) => {
   try {
-    const newTodo = await Todo.find([]);
+    const newTodo = await Todo.find({});
     return res.status(200).json(newTodo);
   } catch (err) {
     return res.status(500).json(err.message);
   }
 };
 
-export const toggleTodo = async (req, res) => {
-  try {
-    const todo = await Todo.findById(req.params.id);
-    const Toggletodo = await Todo.findOneAndUpdate(
-      { _id: req.params.id },
-      { done: !todo.done }
-    );
-    await Toggletodo.save();
-    return res.status(200).json(Toggletodo);
-  } catch (err) {
-    return res.status(500).json(err.message);
-  }
-};
+// export const toggleTodo = async (req, res) => {
+//   try {
+//     const todo = await Todo.findById(req.params.id);
+//     const Toggletodo = await Todo.findOneAndUpdate(
+//       { _id: req.params.id },
+//       { done: !todo.done }
+//     );
+//     await Toggletodo.save();
+//     return res.status(200).json(Toggletodo);
+//   } catch (err) {
+//     return res.status(500).json(err.message);
+//   }
+// };
 
 export const updateTodo = async (req, res) => {
   try {
